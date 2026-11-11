@@ -1,0 +1,1 @@
+源码与发布 runtime 共享向量均 70/70，ID、status、resultHash 完全一致。

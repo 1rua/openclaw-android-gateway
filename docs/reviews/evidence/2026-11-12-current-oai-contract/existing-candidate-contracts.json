@@ -1,0 +1,112 @@
+{
+  "canonicalRepository": "1rua/openclaw-android-gateway",
+  "checkedAt": "2026-11-12",
+  "candidates": [
+    {
+      "candidate": "branch:fix/android-agent-workflows",
+      "revision": "432e7c0545ecfe36af25fd4c451d777d434ae8fc",
+      "contractPin": "4dd825ad3ae6ad20019ff38f6ff5c4f1a8708394",
+      "fileCount": 26,
+      "matchingCount": 20,
+      "compatible": false,
+      "differingPaths": [
+        "gateway-contract/core-dispatched-schemas.json",
+        "gateway-contract/schemas/conversation.schema.json",
+        "gateway-contract/schemas/device-request.schema.json",
+        "gateway-contract/schemas/event.schema.json",
+        "gateway-contract/schemas/negotiate.schema.json",
+        "gateway-contract/src/schema-registry.ts"
+      ],
+      "treeApiReference": "432e7c0545ecfe36af25fd4c451d777d434ae8fc"
+    },
+    {
+      "candidate": "branch:fix/shared-conversation-management",
+      "revision": "c7c087b9fe28adcc658a1cbdb71689a377b65214",
+      "contractPin": "f0b3f1bd4f6f3301b820e38c9f3241bcac05cd10",
+      "fileCount": 26,
+      "matchingCount": 22,
+      "compatible": false,
+      "differingPaths": [
+        "gateway-contract/core-dispatched-schemas.json",
+        "gateway-contract/schemas/device-request.schema.json",
+        "gateway-contract/schemas/event.schema.json",
+        "gateway-contract/src/schema-registry.ts"
+      ],
+      "treeApiReference": "c7c087b9fe28adcc658a1cbdb71689a377b65214"
+    },
+    {
+      "candidate": "branch:main",
+      "revision": "35b2a595fd4374eb64761d08a90d83ea5390570f",
+      "contractPin": "f0b3f1bd4f6f3301b820e38c9f3241bcac05cd10",
+      "fileCount": 26,
+      "matchingCount": 22,
+      "compatible": false,
+      "differingPaths": [
+        "gateway-contract/core-dispatched-schemas.json",
+        "gateway-contract/schemas/device-request.schema.json",
+        "gateway-contract/schemas/event.schema.json",
+        "gateway-contract/src/schema-registry.ts"
+      ],
+      "treeApiReference": "35b2a595fd4374eb64761d08a90d83ea5390570f"
+    },
+    {
+      "candidate": "tag:v1.0.2",
+      "revision": "9b81b977dc8190536b1ac2944d97fbb004b450b9",
+      "contractPin": "851abc44e7ebf5a5aa0ea7ffe311d59be1538058",
+      "fileCount": 26,
+      "matchingCount": 18,
+      "compatible": false,
+      "differingPaths": [
+        "gateway-contract/core-dispatched-schemas.json",
+        "gateway-contract/schemas/command-catalog.schema.json",
+        "gateway-contract/schemas/conversation.schema.json",
+        "gateway-contract/schemas/device-request.schema.json",
+        "gateway-contract/schemas/event.schema.json",
+        "gateway-contract/schemas/negotiate.schema.json",
+        "gateway-contract/src/schema-registry.ts",
+        "gateway-contract/vectors/dispatched-schema-fixtures.json"
+      ],
+      "treeApiReference": "9b81b977dc8190536b1ac2944d97fbb004b450b9"
+    },
+    {
+      "candidate": "tag:v1.0.1",
+      "revision": "f4a04a28d4cc419de4c544d7c99bb08d62a3ee97",
+      "contractPin": "14f8751a646b6f26c0164f39206b88eaa5d49d74",
+      "fileCount": 26,
+      "matchingCount": 17,
+      "compatible": false,
+      "differingPaths": [
+        "gateway-contract/core-dispatched-schemas.json",
+        "gateway-contract/schemas/command-catalog.schema.json",
+        "gateway-contract/schemas/conversation.schema.json",
+        "gateway-contract/schemas/device-request.schema.json",
+        "gateway-contract/schemas/event.schema.json",
+        "gateway-contract/schemas/negotiate.schema.json",
+        "gateway-contract/src/schema-registry.ts",
+        "gateway-contract/vectors/dispatched-schema-fixtures.json",
+        "gateway-contract/vectors/sse-events.json"
+      ],
+      "treeApiReference": "f4a04a28d4cc419de4c544d7c99bb08d62a3ee97"
+    },
+    {
+      "candidate": "tag:v1.0.0",
+      "revision": "7bf383513f774026b50fff06cd5414f3a7642de3",
+      "contractPin": "14f8751a646b6f26c0164f39206b88eaa5d49d74",
+      "fileCount": 26,
+      "matchingCount": 17,
+      "compatible": false,
+      "differingPaths": [
+        "gateway-contract/core-dispatched-schemas.json",
+        "gateway-contract/schemas/command-catalog.schema.json",
+        "gateway-contract/schemas/conversation.schema.json",
+        "gateway-contract/schemas/device-request.schema.json",
+        "gateway-contract/schemas/event.schema.json",
+        "gateway-contract/schemas/negotiate.schema.json",
+        "gateway-contract/src/schema-registry.ts",
+        "gateway-contract/vectors/dispatched-schema-fixtures.json",
+        "gateway-contract/vectors/sse-events.json"
+      ],
+      "treeApiReference": "7bf383513f774026b50fff06cd5414f3a7642de3"
+    }
+  ]
+}

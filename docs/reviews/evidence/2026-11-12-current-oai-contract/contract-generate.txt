@@ -1,0 +1,6 @@
+npm warn Unknown user config "minimum-release-age". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> @open-android-intelligence/openclaw@1.1.0 contract:generate
+> python3 tools/generate-contract-snapshot.py --output .contract-staging/generated-current-oai
+
+已从契约 pin 02ad53e09049c2b06c21cacd9d009c2f14e6d5bd 生成快照：/mnt/data/projects/open-android-intelligence/.worktrees/openclaw-contract-sync/.contract-staging/generated-current-oai/gateway-contract

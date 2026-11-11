@@ -1,0 +1,150 @@
+
+ RUN  v4.1.11 /mnt/data/projects/open-android-intelligence/.worktrees/openclaw-contract-sync
+
+stderr | test/oai-contract-compatibility.test.ts > '源码' 的当前 OAI 契约 > 实际协商当前 CORE，并继续拒绝旧 CORE
+[open_android] Refused negotiation: core Schema digest mismatch (installationId=install_contract_sync appVersion=2.2.1 clientCore=sha256:38786286 gatewayCore=sha256:032f5802)
+
+stderr | test/oai-contract-compatibility.test.ts > '发布 runtime' 的当前 OAI 契约 > 实际协商当前 CORE，并继续拒绝旧 CORE
+[open_android] Refused negotiation: core Schema digest mismatch (installationId=install_contract_sync appVersion=2.2.1 clientCore=sha256:38786286 gatewayCore=sha256:032f5802)
+
+ ❯ test/oai-contract-compatibility.test.ts (10 tests | 10 failed) 30ms
+     × 使用固定 OAI 原始 Schema 的 CORE，避免两份旧快照互相印证 8ms
+     × 验证 caller，并保留不含 caller 的旧持久请求解码能力 1ms
+     × 注册主动推送的五类路由、投递和撤销 Schema，并拒绝额外字段 1ms
+     × 接受真实授权进度闭集，拒绝伪造完成状态 0ms
+     × 实际协商当前 CORE，并继续拒绝旧 CORE 10ms
+     × 使用固定 OAI 原始 Schema 的 CORE，避免两份旧快照互相印证 2ms
+     × 验证 caller，并保留不含 caller 的旧持久请求解码能力 1ms
+     × 注册主动推送的五类路由、投递和撤销 Schema，并拒绝额外字段 1ms
+     × 接受真实授权进度闭集，拒绝伪造完成状态 0ms
+     × 实际协商当前 CORE，并继续拒绝旧 CORE 5ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 10 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/oai-contract-compatibility.test.ts > '源码' 的当前 OAI 契约 > 使用固定 OAI 原始 Schema 的 CORE，避免两份旧快照互相印证
+ FAIL  test/oai-contract-compatibility.test.ts > '发布 runtime' 的当前 OAI 契约 > 使用固定 OAI 原始 Schema 的 CORE，避免两份旧快照互相印证
+AssertionError: expected 'sha256:032f580246eb4a214624bded717819…' to be 'sha256:38786286ca26f601747cf7e52953e1…' // Object.is equality
+
+Expected: "sha256:38786286ca26f601747cf7e52953e1cd4a57b8089e3b95cdc31fbb6f7a8b6d83"
+Received: "sha256:032f580246eb4a214624bded717819b4d5a76191208207edc9e5a4607f5c4d23"
+
+ ❯ test/oai-contract-compatibility.test.ts:55:22
+     53| ])("$name 的当前 OAI 契约", ({ createCore, validate, digest }) => {
+     54|   it("使用固定 OAI 原始 Schema 的 CORE，避免两份旧快照互相印证", () => {
+     55|     expect(digest()).toBe(currentOaiCore);
+       |                      ^
+     56|   });
+     57|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/10]⎯
+
+ FAIL  test/oai-contract-compatibility.test.ts > '源码' 的当前 OAI 契约 > 验证 caller，并保留不含 caller 的旧持久请求解码能力
+Error: SCHEMA_NOT_REGISTERED:device.caller
+ ❯ validateGatewayValue gateway-contract/src/schema-registry.ts:233:37
+    231| ): ValidationResult => {
+    232|   const validate = validators.get(name);
+    233|   if (validate === undefined) throw new Error(`SCHEMA_NOT_REGISTERED:$…
+       |                                     ^
+    234|   return validate(value)
+    235|     ? Object.freeze({ ok: true })
+ ❯ test/oai-contract-compatibility.test.ts:59:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/10]⎯
+
+ FAIL  test/oai-contract-compatibility.test.ts > '源码' 的当前 OAI 契约 > 注册主动推送的五类路由、投递和撤销 Schema，并拒绝额外字段
+Error: SCHEMA_NOT_REGISTERED:push.route
+ ❯ validateGatewayValue gateway-contract/src/schema-registry.ts:233:37
+    231| ): ValidationResult => {
+    232|   const validate = validators.get(name);
+    233|   if (validate === undefined) throw new Error(`SCHEMA_NOT_REGISTERED:$…
+       |                                     ^
+    234|   return validate(value)
+    235|     ? Object.freeze({ ok: true })
+ ❯ test/oai-contract-compatibility.test.ts:90:14
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/10]⎯
+
+ FAIL  test/oai-contract-compatibility.test.ts > '源码' 的当前 OAI 契约 > 接受真实授权进度闭集，拒绝伪造完成状态
+Error: SCHEMA_NOT_REGISTERED:device.authorizationProgress
+ ❯ validateGatewayValue gateway-contract/src/schema-registry.ts:233:37
+    231| ): ValidationResult => {
+    232|   const validate = validators.get(name);
+    233|   if (validate === undefined) throw new Error(`SCHEMA_NOT_REGISTERED:$…
+       |                                     ^
+    234|   return validate(value)
+    235|     ? Object.freeze({ ok: true })
+ ❯ test/oai-contract-compatibility.test.ts:97:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/10]⎯
+
+ FAIL  test/oai-contract-compatibility.test.ts > '源码' 的当前 OAI 契约 > 实际协商当前 CORE，并继续拒绝旧 CORE
+ FAIL  test/oai-contract-compatibility.test.ts > '发布 runtime' 的当前 OAI 契约 > 实际协商当前 CORE，并继续拒绝旧 CORE
+AssertionError: expected { code: 'PROTOCOL_INCOMPATIBLE', …(4) } to be undefined
+
+- Expected:
+undefined
+
++ Received:
+{
+  "code": "PROTOCOL_INCOMPATIBLE",
+  "details": {},
+  "message": "PROTOCOL_INCOMPATIBLE",
+  "retryAfterSeconds": null,
+  "retryable": false,
+}
+
+ ❯ test/oai-contract-compatibility.test.ts:108:28
+    106|     });
+    107|     const accepted = await negotiate(core, currentOaiCore);
+    108|     expect(accepted.error).toBeUndefined();
+       |                            ^
+    109|     expect(accepted.data?.protocol).toEqual({ major: 2, minor: 1 });
+    110|     const rejected = await negotiate(core, previousOaiCore);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/10]⎯
+
+ FAIL  test/oai-contract-compatibility.test.ts > '发布 runtime' 的当前 OAI 契约 > 验证 caller，并保留不含 caller 的旧持久请求解码能力
+Error: SCHEMA_NOT_REGISTERED:device.caller
+ ❯ validateGatewayValue runtime/gateway-contract/src/schema-registry.js:147:15
+    145|     const validate = validators.get(name);
+    146|     if (validate === undefined)
+    147|         throw new Error(`SCHEMA_NOT_REGISTERED:${String(name)}`);
+       |               ^
+    148|     return validate(value)
+    149|         ? Object.freeze({ ok: true })
+ ❯ test/oai-contract-compatibility.test.ts:59:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/10]⎯
+
+ FAIL  test/oai-contract-compatibility.test.ts > '发布 runtime' 的当前 OAI 契约 > 注册主动推送的五类路由、投递和撤销 Schema，并拒绝额外字段
+Error: SCHEMA_NOT_REGISTERED:push.route
+ ❯ validateGatewayValue runtime/gateway-contract/src/schema-registry.js:147:15
+    145|     const validate = validators.get(name);
+    146|     if (validate === undefined)
+    147|         throw new Error(`SCHEMA_NOT_REGISTERED:${String(name)}`);
+       |               ^
+    148|     return validate(value)
+    149|         ? Object.freeze({ ok: true })
+ ❯ test/oai-contract-compatibility.test.ts:90:14
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/10]⎯
+
+ FAIL  test/oai-contract-compatibility.test.ts > '发布 runtime' 的当前 OAI 契约 > 接受真实授权进度闭集，拒绝伪造完成状态
+Error: SCHEMA_NOT_REGISTERED:device.authorizationProgress
+ ❯ validateGatewayValue runtime/gateway-contract/src/schema-registry.js:147:15
+    145|     const validate = validators.get(name);
+    146|     if (validate === undefined)
+    147|         throw new Error(`SCHEMA_NOT_REGISTERED:${String(name)}`);
+       |               ^
+    148|     return validate(value)
+    149|         ? Object.freeze({ ok: true })
+ ❯ test/oai-contract-compatibility.test.ts:97:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/10]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  10 failed (10)
+   Start at  07:42:32
+   Duration  2.10s (transform 714ms, setup 0ms, import 1.86s, tests 30ms, environment 1ms)
+

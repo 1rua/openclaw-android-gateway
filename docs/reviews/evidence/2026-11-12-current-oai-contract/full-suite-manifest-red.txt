@@ -1,0 +1,44 @@
+
+ RUN  v4.1.11 /mnt/data/projects/open-android-intelligence/.worktrees/openclaw-contract-sync
+
+ ❯ test/gateway-capabilities.test.ts (12 tests | 1 failed) 204ms
+     × declares capabilities and security boundaries honestly 18ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/gateway-capabilities.test.ts > OpenClaw Gateway capabilities > declares capabilities and security boundaries honestly
+AssertionError: expected { …(13) } to deeply equal { …(13) }
+
+- Expected
++ Received
+
+@@ -23,11 +23,11 @@
+      "refreshRotation": true,
+      "sessionLogout": true,
+      "sse": true,
+      "unpair": true,
+    },
+-   "capabilitySchemaHash": "sha256:38786286ca26f601747cf7e52953e1cd4a57b8089e3b95cdc31fbb6f7a8b6d83",
++   "capabilitySchemaHash": "sha256:032f580246eb4a214624bded717819b4d5a76191208207edc9e5a4607f5c4d23",
+    "exposureModes": [
+      "host-route",
+      "loopback-reverse-proxy",
+      "direct-tls",
+    ],
+
+ ❯ test/gateway-capabilities.test.ts:396:34
+    394|     const manifest = (await import("../adapter.js")).OPENCLAW_PLUGIN_M…
+    395|
+    396|     expect(staticPluginManifest).toEqual(manifest);
+       |                                  ^
+    397|     expect(manifest.capabilitySchemaHash).toBe(coreSchemaHash());
+    398|     expect(staticPluginManifest.capabilitySchemaHash).toBe(coreSchemaH…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 37 passed (38)
+      Tests  1 failed | 217 passed (218)
+   Start at  07:45:08
+   Duration  63.13s (transform 1.53s, setup 0ms, import 33.47s, tests 25.36s, environment 3ms)
+

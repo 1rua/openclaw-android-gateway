@@ -1,0 +1,10 @@
+{
+  "command": [
+    "python",
+    "<原OpenClaw隔离检出>/tools/check-contract-snapshot.py"
+  ],
+  "OPEN_ANDROID_GATEWAY_CONTRACT_ROOT": "<OAI固定契约隔离检出>/gateway-contract",
+  "exitCode": 1,
+  "stdout": "",
+  "stderr": "契约快照校验失败：当前检出的契约内容与 pin 提交 f0b3f1bd4f6f3301b820e38c9f3241bcac05cd10 不一致\n"
+}
