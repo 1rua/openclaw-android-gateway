@@ -1,0 +1,8 @@
+
+ RUN  v4.1.11 /mnt/data/projects/open-android-intelligence/.worktrees/openclaw-contract-sync
+
+
+ Test Files  38 passed (38)
+      Tests  220 passed (220)
+   Start at  07:50:02
+   Duration  51.29s (transform 736ms, setup 0ms, import 24.03s, tests 23.75s, environment 3ms)

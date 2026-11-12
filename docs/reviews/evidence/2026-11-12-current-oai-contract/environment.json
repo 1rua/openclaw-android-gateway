@@ -1,0 +1,26 @@
+{
+  "canonicalRepository": "1rua/openclaw-android-gateway",
+  "baseline": "35b2a595fd4374eb64761d08a90d83ea5390570f",
+  "contractRevision": "02ad53e09049c2b06c21cacd9d009c2f14e6d5bd",
+  "runnerCommit": "105d9d5bf44270157f45bd00bf2f5748205cbade",
+  "sourceAndRuntimeCore": "sha256:38786286ca26f601747cf7e52953e1cd4a57b8089e3b95cdc31fbb6f7a8b6d83",
+  "node": "v24.18.0",
+  "python": "Python 3.14.6",
+  "packageVersion": "1.1.0",
+  "lockfileUnmodified": true,
+  "versions": {
+    "openclaw": "2026.7.1-2",
+    "vitest": "4.1.11",
+    "typescript": "7.0.2",
+    "tsx": "4.23.1",
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "canonicalize": "3.0.0"
+  },
+  "notes": [
+    "依赖复用自同一package-lock的既有隔离OpenClaw检出；原检出未修改",
+    "底层NTFS不支持有效Unix依赖链接，隔离工作树复制依赖后仅为tsc/vitest/openclaw生成忽略的本地启动包装",
+    "实际测试与构建均使用Node24.18.0；未部署用户宿主、未执行模型、未调用设备",
+    "本轮仅修复PR，保留1.1.0元数据，不创建标签或Release"
+  ]
+}

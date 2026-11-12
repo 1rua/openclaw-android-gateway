@@ -1,0 +1,63 @@
+{
+  "checkout": "105d9d5bf44270157f45bd00bf2f5748205cbade",
+  "results": [
+    {
+      "command": [
+        "python",
+        "gateway-contract/tools/check-contract-pin.py",
+        "--plugin-root-env",
+        "OPENCLAW_PLUGIN_ROOT"
+      ],
+      "exitCode": 1,
+      "stdout": "❌ 插件仓锁定的契约与本仓库不一致。\n   插件仓 pin: f0b3f1bd4f6f3301b820e38c9f3241bcac05cd10\n   本仓 HEAD:  105d9d5bf44270157f45bd00bf2f5748205cbade\n   本仓的 gateway-contract/ 相对该提交已发生变化，必须把插件仓的 contract-pin.json 升级并发布，否则手机端将在协商阶段收到 PROTOCOL_INCOMPATIBLE。\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--quiet",
+        "f0b3f1bd4f6f3301b820e38c9f3241bcac05cd10",
+        "--",
+        "gateway-contract/schemas",
+        "gateway-contract/vectors",
+        "gateway-contract/core-dispatched-schemas.json",
+        "gateway-contract/src"
+      ],
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--quiet",
+        "HEAD",
+        "--",
+        "gateway-contract/schemas",
+        "gateway-contract/vectors",
+        "gateway-contract/core-dispatched-schemas.json",
+        "gateway-contract/src"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--short",
+        "--",
+        "gateway-contract/schemas",
+        "gateway-contract/vectors",
+        "gateway-contract/core-dispatched-schemas.json",
+        "gateway-contract/src"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

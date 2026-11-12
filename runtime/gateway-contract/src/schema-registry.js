@@ -58,6 +58,13 @@ const definitions = {
     "device.request": [deviceRequestDocument, "request"],
     "device.request.result": [deviceRequestDocument, "result"],
     "device.request.resultRequest": [deviceRequestDocument, "resultRequest"],
+    "device.caller": [deviceRequestDocument, "caller"],
+    "device.authorizationProgress": [deviceRequestDocument, "authorizationProgress"],
+    "push.route": [deviceRequestDocument, "endpointRoute"],
+    "push.registration": [deviceRequestDocument, "endpointRegistration"],
+    "push.delivery": [deviceRequestDocument, "pushDelivery"],
+    "push.ack": [deviceRequestDocument, "pushAck"],
+    "push.revoke": [deviceRequestDocument, "pushRevoke"],
     "response.success": [envelopeDocument, "success"],
     "response.failure": [envelopeDocument, "failure"],
 };

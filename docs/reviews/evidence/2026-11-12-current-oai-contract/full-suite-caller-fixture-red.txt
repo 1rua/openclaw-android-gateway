@@ -1,0 +1,44 @@
+
+ RUN  v4.1.11 /mnt/data/projects/open-android-intelligence/.worktrees/openclaw-contract-sync
+
+ ❯ test/oai-contract-compatibility.test.ts (12 tests | 2 failed) 42ms
+     × 实际存储并回读包含 caller 的设备请求事件，错误声明不能入库 16ms
+     × 实际存储并回读包含 caller 的设备请求事件，错误声明不能入库 9ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/oai-contract-compatibility.test.ts > '源码' 的当前 OAI 契约 > 实际存储并回读包含 caller 的设备请求事件，错误声明不能入库
+ FAIL  test/oai-contract-compatibility.test.ts > '发布 runtime' 的当前 OAI 契约 > 实际存储并回读包含 caller 的设备请求事件，错误声明不能入库
+AssertionError: expected [ { …(6) } ] to deeply equal [ { …(6) } ]
+
+- Expected
++ Received
+
+@@ -9,10 +9,11 @@
+        "caller": {
+          "agentName": "契约回归 Agent",
+          "purpose": "验证隔离环境中的设备请求契约",
+        },
+        "grantRevision": 1,
++       "parameters": {},
+        "requestId": "device_req_contract_sync",
+        "risk": "read",
+      },
+    },
+  ]
+
+ ❯ test/oai-contract-compatibility.test.ts:114:51
+    112|         eventType: "device.requested", correlationId: "cor_contract_sy…
+    113|       });
+    114|       expect(account.events.readAfter(null, now)).toEqual([saved]);
+       |                                                   ^
+    115|       expect(() => account.events.append({
+    116|         eventType: "device.requested", correlationId: "cor_invalid_cal…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+
+ Test Files  1 failed | 37 passed (38)
+      Tests  2 failed | 218 passed (220)
+   Start at  07:47:38
+   Duration  53.00s (transform 844ms, setup 0ms, import 27.14s, tests 22.10s, environment 3ms)

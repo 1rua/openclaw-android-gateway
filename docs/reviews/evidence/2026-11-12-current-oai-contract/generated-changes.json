@@ -1,0 +1,9 @@
+{
+  "contractRevision": "02ad53e09049c2b06c21cacd9d009c2f14e6d5bd",
+  "changedPaths": [
+    "core-dispatched-schemas.json",
+    "schemas/device-request.schema.json",
+    "schemas/event.schema.json",
+    "src/schema-registry.ts"
+  ]
+}

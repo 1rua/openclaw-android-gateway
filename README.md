@@ -23,10 +23,10 @@ openclaw plugins inspect open-android-intelligence-gateway --runtime --json
 
 `contract-pin.json` 锁定主仓中唯一维护的 Gateway Protocol 契约提交。仓库内的 `gateway-contract/` 是由该固定提交生成的运行与一致性快照；CI 会逐文件比较 pin 对应的契约与快照。插件安装后使用包内契约，不会在 Gateway 启动时联网下载。
 
-`1.1.0` 固定主仓提交 `f0b3f1bd4f6f3301b820e38c9f3241bcac05cd10`，CORE 为
-`sha256:032f580246eb4a214624bded717819b4d5a76191208207edc9e5a4607f5c4d23`。
-配套 Android APK 应来自该主仓提交，或使用相同契约摘要的更新提交；对应 APK 构建记录见
-[主仓 PR #14](https://github.com/1rua/open-android-intelligence/pull/14)。旧版 App 与插件需配套升级，
+`1.1.0` 当前源码固定主仓提交 `02ad53e09049c2b06c21cacd9d009c2f14e6d5bd`，CORE 为
+`sha256:38786286ca26f601747cf7e52953e1cd4a57b8089e3b95cdc31fbb6f7a8b6d83`。
+配套 Android APK 应来自该主仓提交，或使用相同契约摘要的更新提交；契约同步记录见
+[主仓 Issue #170](https://github.com/1rua/open-android-intelligence/issues/170)；本轮保持版本号，安装时应固定经验证的完整源码 SHA。旧版 App 与插件需配套升级，
 重新连接后才会协商新能力；仅更新 APK 或仅更新插件会得到 `PROTOCOL_INCOMPATIBLE`。
 
 ## 会话管理
