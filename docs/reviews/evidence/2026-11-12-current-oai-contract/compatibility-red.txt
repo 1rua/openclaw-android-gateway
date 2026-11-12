@@ -147,4 +147,3 @@ Error: SCHEMA_NOT_REGISTERED:device.authorizationProgress
       Tests  10 failed (10)
    Start at  07:42:32
    Duration  2.10s (transform 714ms, setup 0ms, import 1.86s, tests 30ms, environment 1ms)
-
